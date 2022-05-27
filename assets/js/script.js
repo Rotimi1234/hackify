@@ -17,8 +17,7 @@ const sr = ScrollReveal ({
   distance: '60px',
   duration: 2500,
   delay: 400,
-  opacity: 0.2,
-  reset: true
+  opacity: 0.2
 })
 
 sr.reveal('.hero-title, .logo, .section-text, .features-content-subtitle, .hero-text, .about-content, .section-title, .section-text',{delay: 400, origin: 'left'})
