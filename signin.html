@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+    
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+        <title>Responsive Login Form Sign In Sign Up</title>
+    </head>
+    <body>
+        <div class="login">
+            <div class="login__content">
+                <div class="login__img">
+                    <img src="assets/img/img-login.svg" alt="">
+                </div>
+
+                <div class="login__forms">
+
+                    <div class="login__create" id="login-up">
+                        <h1 class="login__title">Create Account</h1>
+
+                        <div class="login__box">
+                            <i class='bx bx-user login__icon'></i>
+                            <input type="text" placeholder="Name" id="name" class="login__input">
+                        </div>
+    
+                        <div class="login__box">
+                            <i class='bx bx-user login__icon'></i>
+                            <input type="text" placeholder="Username" id="username" class="login__input">
+                        </div>
+    
+                        <div class="login__box">
+                            <i class='bx bx-at login__icon'></i>
+                            <input type="text" placeholder="Email" id="email" class="login__input">
+                        </div>
+
+                        <div class="login__box">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="password" placeholder="Password" id="password" class="login__input">
+                        </div>
+
+                        <button type="text" id="sub-btn" class="login__button">Sign Up</button>
+                      
+
+                        <div>
+                            <span class="login__account">Already have an Account ?</span>
+                            <a href="login.html"><span class="login__signin" id="sign-up">Sign In</span></a>
+                        </div>
+
+                        <div class="login__social">
+                            <a href="#" class="login__social-icon"><i class='bx bxl-facebook' ></i></a>
+                            <a href="#" class="login__social-icon"><i class='bx bxl-twitter' ></i></a>
+                            <a href="#" class="login__social-icon"><i class='bx bxl-google' ></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+            
+            const firebaseConfig = {
+              apiKey: "AIzaSyBdLJlK7W-WBJqm4KrVHXPw5tBrbScV-dE",
+              authDomain: "login-db-70f93.firebaseapp.com",
+              databaseURL: "https://login-db-70f93-default-rtdb.firebaseio.com",
+              projectId: "login-db-70f93",
+              storageBucket: "login-db-70f93.appspot.com",
+              messagingSenderId: "527342224730",
+              appId: "1:527342224730:web:5dca29c8d48bc73bf6df63",
+              measurementId: "G-FXQPLKEGZR"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+    
+            import { getDatabase, ref, set, child, get, update, remove }
+            from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js"
+    
+            const db = getDatabase();
+
+            //-----------------------------The reference------------------------------//
+            const name = document.getElementById("name");
+            const username = document.getElementById("username");
+            const email = document.getElementById("email");
+            const pass = document.getElementById("password");
+            const submit = document.getElementById("sub-btn");
+
+
+            //--------------------------validation -------------------------------//
+            function isEmptyOrSpaces(str){
+                return str === null || str.match(/^ *$/) !==null;
+            }
+            
+            function Validation(){
+                let nameregex = /^[a-zA-Z\s]+$/;
+                let emailregex = /^[a-zA-Z0-9]+@(gmail|yahoo|outlook)\.com$/;
+                let userregex = /^[a-zA-Z0-9]{5,}$/;
+
+                if(isEmptyOrSpaces(name.value) || isEmptyOrSpaces(email.value) || isEmptyOrSpaces(username.value) ||
+                isEmptyOrSpaces(pass.value)){
+                    alert("you cannot leave any field empty")
+                    return false;
+                }
+
+                if(!nameregex.test(name.value)){
+                    alert("the name should only contain alphabet!");
+                    return false;
+                }
+                if(!emailregex.test(email.value)){
+                    alert("enter a valid email");
+                    return false;
+                }
+                if(!userregex.test(username.value)){
+                    alert("-username can only be alphanumeric\n-username must be atleast 5 characters\n-username cannot contain spaces");
+                    return false;
+                }
+                return true;
+             }
+        
+    //------------------------------- register to firebase------------//
+function RegisterUser(){
+ if(!Validation()){
+    return; 
+ };
+    const dbRef = ref(db);
+
+    get(child(dbRef, "UsersList/"+ username.value)).then((snapshot)=>{
+        if(snapshot.exists()){
+            alert("Account already exist")
+        }
+
+        else{
+            set(ref(db, "UsersList/"+ username.value),
+            {
+                fullname: name.value,
+                email: email.value,
+                username: username.value,
+                password: encPass()
+            })
+            .then(()=>{
+                alert("user added successfully");
+            })
+            .catch((error)=>{
+                alert("error"+ error);
+            })
+        }
+    });
+}
+
+// -----------------------Encryption------------------------//
+            function encPass(){
+                var pass12 = CryptoJS.AES.encrypt(pass.value, pass.value)
+                return pass12.toString();
+            }
+
+// ----------------------------------Assign the event-------------------//
+            submit.addEventListener('click', RegisterUser)
+            
+          </script>
+    </body>
+</html>

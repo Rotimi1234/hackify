@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hack-It - Simple way to hack all META Accounts</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/pricing.css">
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Mulish:wght@600;700;900&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+    <!-- 
+    - scrollreveal
+    -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal({ reset: true });
+    </script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+
+<body>
+
+  <!-- 
+    - HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logos.svg" alt="Landio logo">
+      </a>
+
+      <button class="menu-toggle-btn" data-nav-toggle-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html#hero" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#features" class="navbar-link">Features</a>
+          </li>
+
+          <li>
+            <a href="#" class="navbar-link">Pricing</a>
+          </li>
+
+          <li>
+            <a href="#blog" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <div class="header-actions">
+          <a href="" id="userlink" class="header-action-link">Register</a>
+          <a href="" id="signoutlink" class="header-action-link">Log in</a>
+      </div>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+   <article>
+
+    <section class="card container grid">
+        <div class="card__container grid">
+            <!--==================== CARD 1 ====================-->
+            <article class="card__content grid">
+                <div class="card__pricing">
+                    <div class="card__pricing-number">
+                        <span class="card__pricing-symbol">N</span>0
+                    </div>
+                    <span class="card__pricing-month">/month</span>
+                </div>
+
+                <header class="card__header">
+                    <div class="card__header-circle grid">
+                        <img src="assets/images/free-coin.png" alt="" class="card__header-img">
+                    </div>
+                    
+                    <span class="card__header-subtitle">Free plan</span>
+                    <h1 class="card__header-title">Basic</h1>
+                </header>
+                
+                <ul class="card__list grid">
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Only Facebook Accounts</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">2 hacks per day</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Available for a month only.</p>
+                    </li>
+                </ul>
+
+                <a href=""><button class="card__button">Choose this plan</button></a>
+            </article>
+
+            <!--==================== CARD 2 ====================-->
+            <article class="card__content grid">
+                <div class="card__pricing">
+                    <div class="card__pricing-number">
+                        <span class="card__pricing-symbol">N</span>2000
+                    </div>
+                    <span class="card__pricing-month">/3month</span>
+                </div>
+
+                <header class="card__header">
+                    <div class="card__header-circle grid">
+                        <img src="assets/images/pro-coin.png" alt="" class="card__header-img">
+                    </div>
+
+                    <span class="card__header-subtitle">Most popular</span>
+                    <h1 class="card__header-title">Professional</h1>
+                </header>
+                
+                <ul class="card__list grid">
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">100 user request</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Unlimited downloads</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Unlock all features from our site</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Daily content updates</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Fully editable files</p>
+                    </li>
+                </ul>
+
+                <button class="card__button">Choose this plan</button>
+            </article>
+
+            <!--==================== CARD 3 ====================-->
+            <article class="card__content grid">
+                <div class="card__pricing">
+                    <div class="card__pricing-number">
+                        <span class="card__pricing-symbol">N</span>7000
+                    </div>
+                    <span class="card__pricing-month">/Year</span>
+                </div>
+
+                <header class="card__header">
+                    <div class="card__header-circle grid">
+                        <img src="assets/images/enterprise-coin.png" alt="" class="card__header-img">
+                    </div>
+
+                    <span class="card__header-subtitle">For agencies</span>
+                    <h1 class="card__header-title">Enterprise</h1>
+                </header>
+                
+                <ul class="card__list grid">
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Unlimited  user request</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Unlimited downloads</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Unlock all features from our site</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Daily content updates</p>
+                    </li>
+                    <li class="card__list-item">
+                        <i class="uil uil-check card__list-icon"></i>
+                        <p class="card__list-description">Fully editable files</p>
+                    </li>
+                </ul>
+
+                <button class="card__button">Choose this plan</button>
+            </article>
+        </div>
+    </section>
+   </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-footers.svg" alt="Landio logo">
+          </a>
+
+          <p class="footer-text">
+            Cras ultricies mi eu turpis sit hendrerit fringilla vestibulum ante ipsum primis in faucibus ultrices
+            posuere cubilia.
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-item-title">ABOUT US</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Works</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Strategy</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Releases</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Press</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Mission</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-item-title">CUSTOMERS</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Tranding</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Popular</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Customers</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Features</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-item-title">SUPPORT</p>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Developers</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Support</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Customer Service</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Get Started</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Guide</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2022 <a href="">dami_dev-01</a>. All Right Reserved
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+  <script>
+    //---------------------------------------References----------------------------//
+    let userlink = document.getElementById("userlink");
+    let header = document.getElementById("hh");
+    let signoutlink = document.getElementById("signoutlink");
+    var currentUser = null;
+
+    //----------------functions-----------------------------//
+    function getUsername(){
+        let keepLoggedIn = localStorage.getItem("keepLoggedIn");
+
+        if (keepLoggedIn == "yes") {
+            currentUser = JSON.parse(localStorage.getItem("user"))
+        } else {
+            currentUser = JSON.parse(sessionStorage.getItem("user"))
+        }
+    }
+
+    function Signout(){
+        sessionStorage.removeItem("user")
+        localStorage.removeItem("user")
+        localStorage.removeItem("keepLoggedIn")
+        window.location = "index.html"
+    }
+
+
+    //======================== windows loads=======================//
+    window.onload = function(){
+        getUsername();
+        if (currentUser == null) {
+            userlink.innerText="Register"
+            userlink.href = "signin.html"
+
+            signoutlink.innerText="Login"
+            signoutlink.href = "login.html"
+        }
+        else{
+            userlink.innerText= currentUser.username   
+           // header.innerText = "Welcome " + currentUser.fullname
+            userlink.href = "#"
+
+            signoutlink.innerText="Sign Out"
+            signoutlink.href = "javascript:Signout()"
+        }
+    }
+
+</script>
+  
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

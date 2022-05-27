@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+    
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+        <title>Responsive Login Form Sign In Sign Up</title>
+    </head>
+    <body>
+        <div class="login">
+            <div class="login__content">
+                <div class="login__img">
+                    <img src="assets/img/img-login.svg" alt="">
+                </div>
+
+                <div class="login__forms">
+                    <div class="login__registre" id="login-in">
+                        <h1 class="login__title">Sign In</h1>
+    
+                        <div class="login__box">
+                            <i class='bx bx-user login__icon'></i>
+                            <input id="username" type="text" placeholder="Username" class="login__input">
+                        </div>
+    
+                        <div class="login__box">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input id="pass" type="password" placeholder="Password" class="login__input">
+                        </div>
+
+                        <div class="login__box">
+                            <i class='bx bx-lock-alt login__icon'></i>
+                            <input type="checkbox" id="customswitch1" class="login__input">
+                            <label for="customswitch1">keep me logged in</label>
+                        </div>
+
+                        <a href="#" class="login__forgot">Forgot password?</a>
+
+                        <button type="text" id="sub-btn" class="login__button">Log In</button>
+
+                        <div>
+                            <span class="login__account">Don't have an Account ?</span>
+                            <a href="signin.html"><span class="login__signin" id="sign-up">Sign Up</span></a>
+                        </div>
+                    </div>
+
+            
+                </div>
+            </div>
+        </div>
+        <script type="module">
+            // Import the functions you need from the SDKs you need
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
+            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
+            
+            const firebaseConfig = {
+              apiKey: "AIzaSyBdLJlK7W-WBJqm4KrVHXPw5tBrbScV-dE",
+              authDomain: "login-db-70f93.firebaseapp.com",
+              databaseURL: "https://login-db-70f93-default-rtdb.firebaseio.com",
+              projectId: "login-db-70f93",
+              storageBucket: "login-db-70f93.appspot.com",
+              messagingSenderId: "527342224730",
+              appId: "1:527342224730:web:5dca29c8d48bc73bf6df63",
+              measurementId: "G-FXQPLKEGZR"
+            };
+          
+            // Initialize Firebase
+            const app = initializeApp(firebaseConfig);
+            const analytics = getAnalytics(app);
+    
+            import { getDatabase, ref, set, child, get, update, remove }
+            from "https://www.gstatic.com/firebasejs/9.8.1/firebase-database.js"
+    
+            const db = getDatabase();
+
+            //-----------------------------The reference------------------------------//
+            
+            const username = document.getElementById("username");
+            const pass = document.getElementById("pass");
+            const submit = document.getElementById("sub-btn");
+
+
+            // Authenticate process//
+        function AuthenticateUser(){
+            const dbref = ref(db);
+
+            get(child(dbref, "UsersList/"+ username.value)).then((snapshot)=>{
+                if(snapshot.exists()){
+                    alert()
+                    let dbpass = decPass(snapshot.val().password);
+                    if(dbpass == pass.value){
+                        login(snapshot.val());
+                    }
+
+                    else{
+                        alert("username or passwod is invalid")
+                    }
+                
+                }
+                    else{
+                        alert("username or password is invalid");
+                    }    
+            });
+        }
+
+        // -----------------------Decryption process------------------------//
+        function decPass(dbpass){
+                var pass12 = CryptoJS.AES.decrypt(dbpass, pass.value);
+                return pass12.toString(CryptoJS.enc.Utf8);
+            }
+        
+            // ----------------------Login------------------------//
+            function login(user){
+                let keepLoggedIn = document.getElementById("customswitch1").checked;
+
+                if (!keepLoggedIn) {
+                    sessionStorage.setItem('user', JSON.stringify(user));
+                    window.location="index.html"
+                }
+
+                else{
+                    localStorage.setItem('keepLoggedIn', 'yes');
+                    localStorage.setItem('user', JSON.stringify(user));
+                    window.location="index.html"
+                }
+            }
+
+            // ----------------------------------Assign the event-------------------//
+            submit.addEventListener('click', AuthenticateUser)
+
+          </script>
+    </body>
+</html>
