@@ -6,6 +6,7 @@
 
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="assets/css/style.css">
     
         <!-- ===== BOX ICONS ===== -->
         <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
@@ -34,15 +35,20 @@
                             <input id="pass" type="password" placeholder="Password" class="login__input">
                         </div>
 
-                        <div class="login__box">
-                            <i class='bx bx-lock-alt login__icon'></i>
-                            <input type="checkbox" id="customswitch1" class="login__input">
-                            <label for="customswitch1">keep me logged in</label>
+                        <div style="margin-top: 10px;">
+                            <i style="margin-top: 10px;" class='bx bx-lock-alt login__icon'>Remember Me</i>
+
+                            <label class="tog" for="customswitch1">
+                                <input type="checkbox" id="customswitch1" class="logi__input">
+                                <div class="toggle__fill"></div>
+                            </label>
+                            
                         </div>
+                      
 
                         <a href="#" class="login__forgot">Forgot password?</a>
 
-                        <button type="text" id="sub-btn" class="login__button">Log In</button>
+                        <button style="margin-top: 20px;" type="text" id="sub-btn" class="btn btn-primary"><strong>Log In</strong></button>
 
                         <div>
                             <span class="login__account">Don't have an Account ?</span>
