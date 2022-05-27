@@ -122,19 +122,8 @@ img{
   color: var(--first-color);
 }
 
-.login__input{
-  border: none;
-  outline: none;
-  font-size: var(--normal-font-size);
-  font-weight: 700;
-  color: var(--first-color-dark);
-}
 
-.login__input::placeholder{
-  font-size: var(--normal-font-size);
-  font-family: var(--body-font);
-  color: var(--first-color-light);
-}
+
 
 .login__forgot{
   display: block;
@@ -238,4 +227,48 @@ img{
   .login__create{
     bottom: -5.5rem;
   }
+}
+
+.login__input{
+  display: none;
+ }
+
+.tog {
+  --width: 50px;
+  --height: calc(var(--width) / 2);
+  --border-radius: calc(var(--height) / 2);
+
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+.toggle__fill {
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: var(--border-radius);
+  background: #dddddd;
+  transition: background 0.2s;
+}
+
+.logi__input:checked ~ .toggle__fill {
+  background: #009578;
+}
+
+.toggle__fill::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--height);
+  width: var(--height);
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  border-radius: var(--border-radius);
+  transition: transform 0.2s;
+}
+
+.logi__input:checked ~ .toggle__fill::after {
+  transform: translateX(var(--height));
 }

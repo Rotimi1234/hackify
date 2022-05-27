@@ -201,7 +201,7 @@
   \*-----------------------------------*/
   
   .header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -710,9 +710,9 @@
    * responsive for larger than 300px screen
    */
   
-   @media (min-width: 300px) {
-    .menu-toggle-btn{
-    margin-right: 40px
+   @media (max-width: 300px) {
+    .header{
+      width: 379px;
    }
    
   
