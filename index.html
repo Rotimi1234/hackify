@@ -518,7 +518,7 @@
                 <div class="input-wrapper">
                   <label for="emai">Email*</label>
 
-                  <input type="text" name="email" id="email" required placeholder="Enter Your Email"
+                  <input type="text" name="email" id="email" value="" required placeholder="Enter Your Email"
                     class="input-field">
                 </div>
 
@@ -746,6 +746,7 @@
 
         <div class="message">
             <span class="text text-1">Success</span>
+            <span class="text text-1" id="welcome">Welcome </span>
             <span class="text text-2">Logged in to Home Page</span>
         </div>
     </div>
@@ -759,11 +760,13 @@
     <script>
         //---------------------------------------References----------------------------//
         let userlink = document.getElementById("userlink");
-        let header = document.getElementById("hh");
+        let welcome = document.getElementById("welcome");
         let signoutlink = document.getElementById("signoutlink");
+        let email = document.getElementById("email");
+        let name = document.getElementById("name");
         var currentUser = null;
-
-
+        
+ 
         //toast
         const buttonss = document.querySelector("buttonss"),
       toast = document.querySelector(".toast")
@@ -825,7 +828,10 @@
             }
             else{
                 userlink.innerText= currentUser.username   
-               // header.innerText = "Welcome " + currentUser.fullname
+                welcome.innerText= "Welcome " + currentUser.fullname
+                email.value=currentUser.email
+                name.value=currentUser.fullname
+
                 userlink.href = "#"
                 toasst()
                 signoutlink.innerText="Sign Out"

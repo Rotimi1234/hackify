@@ -29,7 +29,7 @@
     - scrollreveal
     -->
     <script src="https://unpkg.com/scrollreveal"></script>
-     
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
      <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
 
@@ -76,8 +76,9 @@
         </ul>
 
         <div class="header-actions">
-          <a href="" id="userlink" class="header-action-link">Register</a>
-          <a href="" id="signoutlink" class="header-action-link">Log in</a>
+          <a href="" id="userlink" class="header-action-link"></a>
+          <a href="" id="signoutlink" class="header-action-link"></a>
+          <p style="display: none;" id="emaillink" class="header-action-link emailval">Email</p>
       </div>
       </nav>
 
@@ -126,7 +127,7 @@
                     </li>
                 </ul>
 
-                <a href=""><button class="card__button">Choose this plan</button></a>
+                <button class="card__button paybtn" onclick="makePayment()">Choose this plan</button>
             </article>
 
             <!--==================== CARD 2 ====================-->
@@ -170,7 +171,7 @@
                     </li>
                 </ul>
 
-                <button class="card__button">Choose this plan</button>
+                <button class="card__button paybtn" onclick="makePayment2()">Choose this plan</button>
             </article>
 
             <!--==================== CARD 3 ====================-->
@@ -214,7 +215,7 @@
                     </li>
                 </ul>
 
-                <button class="card__button">Choose this plan</button>
+                <button class="card__button paybtn" onclick="makePayment3()">Choose this plan</button>
             </article>
         </div>
     </section>
@@ -381,6 +382,7 @@
   -->
   <script src="./assets/js/script.js"></script>
    <script src="./assets/js/main.js"></script>
+   <script src="./assets/js/pay.js"></script>
   
   <!-- 
     - ionicon link
