@@ -2,6 +2,8 @@
     //---------------------------------------References----------------------------//
     let userlink = document.getElementById("userlink");
     let header = document.getElementById("hh");
+    let emailval = document.getElementsByClassName("emailval")
+    let paybtn = document.getElementsByClassName("paybtn")
     let signoutlink = document.getElementById("signoutlink");
     var currentUser = null;
 
@@ -30,15 +32,14 @@
         if (currentUser == null) {
             userlink.innerText="Register"
             userlink.href = "signin.html"
-
             signoutlink.innerText="Login"
             signoutlink.href = "login.html"
         }
         else{
             userlink.innerText= currentUser.username   
-           // header.innerText = "Welcome " + currentUser.fullname
+            emailval.textContent = currentUser.email
             userlink.href = "#"
-
+            
             signoutlink.innerText="Sign Out"
             signoutlink.href = "javascript:Signout()"
         }
