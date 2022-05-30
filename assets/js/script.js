@@ -30,7 +30,7 @@ sr.reveal('.footer-link-box',{delay: 400, origin: 'top'})
 
 
 // disable right click
-/**document.addEventListener("contextmenu", (e) => {
+document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
 }, false);
 
@@ -45,6 +45,6 @@ document.addEventListener("keydown", (e) => {
 });
 
 
-*/
+
 
 
