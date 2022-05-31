@@ -1,9 +1,38 @@
+ // (B) ENCRYPT & DECRYPT FUNCTIONS
+ var crypt = {
+    // (B1) THE SECRET KEY
+    secret : "AIzaSyBdLJlK7W-WBJqm4KrVHXPw5tBrbScV-dE",
+
+    // (B2) ENCRYPT
+    encrypt : (clear) => {
+      var cipher = CryptoJS.AES.encrypt(clear, crypt.secret);
+      cipher = cipher.toString();
+      return cipher;
+    },
+
+    // (B3) DECRYPT
+    decrypt : (cipher) => {
+      var decipher = CryptoJS.AES.decrypt(cipher, crypt.secret);
+      decipher = decipher.toString(CryptoJS.enc.Utf8);
+      return decipher;
+    }
+  };
+
+  // (C) TEST
+  // (C1) ENCRYPT CLEAR TEXT
+  var cipher = crypt.encrypt(crypt.secret);
+  console.log(cipher);
+
+  // (C2) DECRYPT CIPHER TEXT
+  var decipher = crypt.decrypt(cipher);
+  console.log(decipher);
+
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-app.js";
  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.1/firebase-analytics.js";
  
  const firebaseConfig = {
-   apiKey: "AIzaSyBdLJlK7W-WBJqm4KrVHXPw5tBrbScV-dE",
+   apiKey: decipher,
    authDomain: "login-db-70f93.firebaseapp.com",
    databaseURL: "https://login-db-70f93-default-rtdb.firebaseio.com",
    projectId: "login-db-70f93",
