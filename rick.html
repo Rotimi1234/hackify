@@ -16,7 +16,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/modal.css">
+  <link rel="stylesheet" href="./assets/css/toast.css">
 
   <!-- 
     - google font link
@@ -31,45 +31,116 @@
     -->
     <script src="https://unpkg.com/scrollreveal"></script>
      
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </head>
-
 <body>
 
- 
+<!-- 
+    - HEADER
+  --> 
 
-  
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logos.svg" alt="Landio logo">
+      </a>
+
+      <button class="menu-toggle-btn" data-nav-toggle-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#hero" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#features" class="navbar-link">Features</a>
+          </li>
+
+          <li>
+            <a href="pay.html" class="navbar-link">Pricing</a>
+          </li>
+
+         
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+        <div class="header-actions">
+            <a href="" id="userlink" class="header-action-link">Register</a>
+            <a href="" id="signoutlink" class="header-action-link">Log in</a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+
+
 
 
   <main>
     <article>
 
-        <section class="modal containerss">
-          <button style="width: 100px;
-          border-radius: 20px;
-          margin: 10px;;         " class="modal__button modal__button-width"><a href="index.html">Back</a>
-</button>
+      <!-- 
+        - HERO
+      -->
 
-            <div class="modal__container show-modal" id="modal-container">
-                <div class="modal__content">
-                    <div class="modal__close close-modal" title="Close">
-                        <i class='bx bx-x'></i>
-                    </div>
+      <section class="hero" id="hero">
+        <div class="container">
 
-                    
-
-                    <h1 class="modal__title">Please make sure you are Registered and Logged In</h1>
-                    <h1 class="modal__title">If not an error will be met during purchase</h1>
-                    <p class="modal__description">Proceed if Logged In<br>No Refunds</p>
-                    <button class="modal__button modal__button-width"><a href="pricing.html">To payment page</a>
-                    </button>
-                </div>
+          <div class="hero-content">
+            <div style="display: flex;">
+                <h1 class="h1 hero-title">Hack-</h1>
+                <span class="h1 hero-title" style="color:hsl(245, 67%, 59%);">It</span> 
             </div>
-        </section>
+
+            <p class="hero-text">
+              Have you been looking for an easy way to hack a Facebook account?
+            </p>
+
+            <p class="form-text">
+              <span>🥳</span> Well You Just found a way. 
+              But first do us a favour and signup for our newsletter on tips and tricks 
+              on simple ways to hack and many more👇
+            </p>
+
+            <form action="" class="hero-form">
+              <input type="email" name="email" required placeholder="Enter Your Email" class="email-field">
+
+              <button type="submit" class="btn btn-primary"><a href="rickroll.html">Subscribe</a></button>
+            </form>
+          </div>
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" alt="Hero image">
+          </figure>
+
+        </div>
+      </section>
 
 
 
 
+
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - FOOTER
+  -->
 
   <footer>
 
@@ -214,23 +285,33 @@
 
   </footer>
 
+  <div class="toast">
+    <div class="toast-content">
+        <ion-icon class="fa-solid fa-check check" name="checkmark-circle"></ion-icon>
+
+        <div class="message">
+            <span class="text text-1">Success</span>
+            <span class="text text-1" id="welcome">Welcome </span>
+            <span class="text text-2">Logged in to Home Page</span>
+        </div>
+    </div>
+    <i class="fa-solid fa-xmark closess"></i>
+
+    <div class="progress"></div>
+</div>
 
 
 
+    <script src="./assets/js/index.js">
 
-  <!-- 
-    - custom js link
-  -->
-  <script src="./assets/js/script.js"></script>
+    </script>
+     <script src="./assets/js/script.js"></script>
 <script type="module" src="./assets/js/disable.js"></script>
-   <script src="./assets/js/main.js"></script>
-  
-  <!-- 
-    - ionicon link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
+     
+     <!-- 
+       - ionicon link
+     -->
+     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

@@ -15,8 +15,8 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <link rel="stylesheet" href="./assets/css/modal.css">
+  <link rel="stylesheet" href="./assets/css/style1.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
   <!-- 
     - google font link
@@ -36,40 +36,97 @@
 
 <body>
 
- 
+  <!-- 
+    - HEADER
+  -->
 
-  
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logos.svg" alt="Landio logo">
+      </a>
+
+      <button class="menu-toggle-btn" data-nav-toggle-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar">
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html#hero" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#features" class="navbar-link">Features</a>
+          </li>
+
+          <li>
+            <a href="pay.html" class="navbar-link">Pricing</a>
+          </li>
+
+         
+
+          <li>
+            <a href="contact.html" class="navbar-link">Contact Us</a>
+          </li>
+
+        </ul>
+
+          <div class="header-actions">
+            <a href="" id="userlink" class="header-action-link">Register</a>
+            <a href="" id="signoutlink" class="header-action-link">Log in</a>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+
+ 
 
 
   <main>
     <article>
 
-        <section class="modal containerss">
-          <button style="width: 100px;
-          border-radius: 20px;
-          margin: 10px;;         " class="modal__button modal__button-width"><a href="index.html">Back</a>
+       
+<!--==================== VIDEO ====================-->
+<section class="video section" style="margin-top: 100px;">
+
+    <button style="width: 100px;
+    border-radius: 20px;
+    margin: 10px;;         " class="btn btn-primary"><a href="index.html">Back</a>
+</button>
+    <h2 class="section__title">Loser</h2>
+
+    <div class="video__container container">
+        <p class="video__description">Thanks for the cash and find something better to do</p>
+
+        <div class="video__content">
+            <video id="video-file">
+                <source src="assets/video/video.mp4" type="video/mp4">
+            </video>
+
+            
+        </div>
+    </div>
+</section>
+
+<button class="button btn btn-primary" id="video-button">
+    <i class="ri-play-line video__button-icon" id="video-icon"></i>
 </button>
 
-            <div class="modal__container show-modal" id="modal-container">
-                <div class="modal__content">
-                    <div class="modal__close close-modal" title="Close">
-                        <i class='bx bx-x'></i>
-                    </div>
 
-                    
-
-                    <h1 class="modal__title">Please make sure you are Registered and Logged In</h1>
-                    <h1 class="modal__title">If not an error will be met during purchase</h1>
-                    <p class="modal__description">Proceed if Logged In<br>No Refunds</p>
-                    <button class="modal__button modal__button-width"><a href="pricing.html">To payment page</a>
-                    </button>
-                </div>
-            </div>
-        </section>
+      </article>
+    </main>
 
 
 
 
+  <!-- 
+    - FOOTER
+  -->
 
   <footer>
 
@@ -230,6 +287,41 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    /*==================== VIDEO ====================*/
+const videoFile = document.getElementById('video-file'),
+  videoButton = document.getElementById('video-button'),
+  videoIcon = document.getElementById('video-icon')
+
+function playPause(){ 
+if (videoFile.paused){
+    // Play video
+    videoFile.play()
+    // We change the icon
+    videoIcon.classList.add('ri-pause-line')
+    videoIcon.classList.remove('ri-play-line')
+    
+}
+else {
+    // Pause video
+    videoFile.pause(); 
+    // We change the icon
+    videoIcon.classList.remove('ri-pause-line')
+    videoIcon.classList.add('ri-play-line')
+
+}
+}
+videoButton.addEventListener('click', playPause)
+
+function finalVideo(){
+// Video ends, icon change
+videoIcon.classList.remove('ri-pause-line')
+videoIcon.classList.add('ri-play-line')
+}
+// ended, when the video ends
+videoFile.addEventListener('ended', finalVideo)
+
+</script>
 
 </body>
 
