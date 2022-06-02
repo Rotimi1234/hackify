@@ -4,9 +4,8 @@ function makePayment() {
 
 const payername = document.getElementById("userlink").textContent;
 const emailval = document.getElementsByClassName("emailval").textContent;
-console.log(emailval)
-console.log(payername)
-console.log("yurtj")
+ 
+console.log("Payment Working")
 
     FlutterwaveCheckout({
       public_key: "FLWPUBK_TEST-fa35fc033f99874e75ce5688e03cccb5-X",
@@ -14,7 +13,7 @@ console.log("yurtj")
       amount: 54600,
       currency: "NGN",
       payment_options: "card, banktransfer, ussd",
-      redirect_url: "https://guileless-stroopwafel-64f468.netlify.app/pricing.html",
+      redirect_url: "https://guileless-stroopwafel-64f468.netlify.app/rick.html",
       meta: {
         consumer_id: Math.floor(Math.random() * 100001),
       },
@@ -40,10 +39,8 @@ console.log("yurtj")
 function makePayment2() {
 
     const payername = document.getElementById("userlink").textContent;
-    const emailval = document.getElementsByClassName("emailval").textContent;
-    console.log(emailval)
-    console.log(payername)
-    console.log("yurtj")
+    const emailval = document.getElementsByClassName("emailval").textContent; 
+    console.log("Payment Working")
     
         FlutterwaveCheckout({
           public_key: "FLWPUBK_TEST-fa35fc033f99874e75ce5688e03cccb5-X",
@@ -51,7 +48,7 @@ function makePayment2() {
           amount: 54600,
           currency: "NGN",
           payment_options: "card, banktransfer, ussd",
-          redirect_url: "https://guileless-stroopwafel-64f468.netlify.app/pricing.html",
+          redirect_url: "https://guileless-stroopwafel-64f468.netlify.app/rick.html",
           meta: {
             consumer_id: Math.floor(Math.random() * 100001),
           },
@@ -76,10 +73,8 @@ function makePayment2() {
 function makePayment3() {
 
     const payername = document.getElementById("userlink").textContent;
-    const emailval = document.getElementsByClassName("emailval").textContent;
-    console.log(emailval)
-    console.log(payername)
-    console.log("yurtj")
+    const emailval = document.getElementsByClassName("emailval").textContent; 
+    console.log("Payment Working")
     
         FlutterwaveCheckout({
           public_key: "FLWPUBK_TEST-fa35fc033f99874e75ce5688e03cccb5-X",
@@ -87,7 +82,7 @@ function makePayment3() {
           amount: 54600,
           currency: "NGN",
           payment_options: "card, banktransfer, ussd",
-          redirect_url: "https://guileless-stroopwafel-64f468.netlify.app/pricing.html",
+          redirect_url: "https://guileless-stroopwafel-64f468.netlify.app/rick.html",
           meta: {
             consumer_id: Math.floor(Math.random() * 100001),
           },
